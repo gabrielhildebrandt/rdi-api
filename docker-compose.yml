@@ -1,0 +1,47 @@
+version: '3.5'
+
+# IP's
+#
+# 5002 ...... RDI API Database
+# 5003 ...... RDI API Integration Tests Database
+
+services:
+  rdi.api.database:
+    container_name: "RDI.API.Database"
+    image: "mcr.microsoft.com/mssql/server:2019-latest"
+    ports:
+      - "5002:1433"
+    volumes:
+      - rdi.api.database:/var/opt/mssql
+    environment:
+      ACCEPT_EULA: "Y"
+      MSSQL_PID: "Developer"
+      SA_PASSWORD: "evUyCzAERFGwh6Ts"
+    networks:
+      - rdi.api
+  rdi.api.integration-tests-database:
+    container_name: "RDI.API.IntegrationTestsDatabase"
+    image: "mcr.microsoft.com/mssql/server:2019-latest"
+    ports:
+      - "5003:1433"
+    volumes:
+      - rdi.api.integration-tests-database:/var/opt/mssql
+    environment:
+      ACCEPT_EULA: "Y"
+      MSSQL_PID: "Developer"
+      SA_PASSWORD: "UcqX3EJ2K3wr8fTY"
+    networks:
+      - rdi.api
+
+volumes:
+  rdi.api.database:
+    name: rdi.api.database
+    external: false
+  rdi.api.integration-tests-database:
+    name: rdi.api.integration-tests-database
+    external: false
+
+networks:
+  rdi.api:
+    name: rdi-api
+    driver: bridge
