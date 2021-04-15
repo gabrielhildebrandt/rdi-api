@@ -10,11 +10,11 @@ namespace RDI.API.Responses
             Token = token;
             CardId = cardId;
         }
-        
-        public DateTime CreationDate { get;  }
 
-        public Guid Token { get;  }
+        public DateTime CreationDate { get; }
 
-        public Guid CardId { get;  }
+        public Guid Token { get; }
+
+        public Guid CardId { get; }
     }
 }

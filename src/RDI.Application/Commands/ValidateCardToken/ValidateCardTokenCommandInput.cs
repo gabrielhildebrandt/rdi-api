@@ -12,9 +12,9 @@ namespace RDI.Application.Commands.ValidateCardToken
             Token = token;
             CVV = cvv;
         }
-        
+
         public int CustomerId { get; }
-        
+
         public Guid CardId { get; }
 
         public Guid Token { get; }

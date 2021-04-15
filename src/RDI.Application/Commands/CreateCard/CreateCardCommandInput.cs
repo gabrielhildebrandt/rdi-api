@@ -10,7 +10,7 @@ namespace RDI.Application.Commands.CreateCard
             CardNumber = cardNumber;
             CVV = cvv;
         }
-        
+
         public int CustomerId { get; }
 
         public long CardNumber { get; }

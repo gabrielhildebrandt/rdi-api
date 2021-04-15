@@ -11,12 +11,12 @@ namespace RDI.Application.Commands.ValidateCardToken
 {
     public class ValidateCardTokenCommandHandler : ICommandHandler<ValidateCardTokenCommandInput, ValidateCardTokenCommandResult>
     {
-        private readonly ICardRepository _cardRepository;
-
         public ValidateCardTokenCommandHandler(ICardRepository cardRepository)
         {
             _cardRepository = cardRepository ?? throw new ArgumentNullException(nameof(cardRepository));
         }
+
+        private readonly ICardRepository _cardRepository;
 
         public async Task<ValidateCardTokenCommandResult> Handle(ValidateCardTokenCommandInput command, CancellationToken cancellationToken)
         {

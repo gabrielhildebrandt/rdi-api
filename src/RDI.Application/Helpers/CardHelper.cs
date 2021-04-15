@@ -18,7 +18,7 @@ namespace RDI.Application.Helpers
             }
 
             using var md5 = MD5.Create();
-            var hash = md5.ComputeHash(Encoding.Default.GetBytes(string.Join("",digits)));
+            var hash = md5.ComputeHash(Encoding.Default.GetBytes(string.Join("", digits)));
             return new Guid(hash);
         }
     }

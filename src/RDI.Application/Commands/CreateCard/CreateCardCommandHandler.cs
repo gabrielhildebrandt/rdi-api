@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 using RDI.Application.Helpers;
@@ -10,12 +9,12 @@ namespace RDI.Application.Commands.CreateCard
 {
     public class CreateCardCommandHandler : ICommandHandler<CreateCardCommandInput, CreateCardCommandResult>
     {
-        private readonly ICardRepository _cardRepository;
-
         public CreateCardCommandHandler(ICardRepository cardRepository)
         {
             _cardRepository = cardRepository ?? throw new ArgumentNullException(nameof(cardRepository));
         }
+
+        private readonly ICardRepository _cardRepository;
 
         public async Task<CreateCardCommandResult> Handle(CreateCardCommandInput command, CancellationToken cancellationToken)
         {

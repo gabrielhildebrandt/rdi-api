@@ -31,7 +31,7 @@ namespace RDI.Infra.Maps
                 .HasColumnName("Number")
                 .HasColumnType("bigint")
                 .IsRequired();
-            
+
             builder.Property(x => x.Token)
                 .HasColumnName("Token")
                 .HasColumnType("uniqueidentifier")

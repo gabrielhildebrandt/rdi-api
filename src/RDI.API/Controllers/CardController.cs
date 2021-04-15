@@ -14,12 +14,12 @@ namespace RDI.API.Controllers
     [Route("v1/cards")]
     public class CardController : Controller
     {
-        private readonly IMediator _mediator;
-
         public CardController(IMediator mediator)
         {
             _mediator = mediator ?? throw new ArgumentNullException(nameof(mediator));
         }
+
+        private readonly IMediator _mediator;
 
         [HttpPost("")]
         [ProducesResponseType(typeof(CardResponse), (int) HttpStatusCode.Created)]
