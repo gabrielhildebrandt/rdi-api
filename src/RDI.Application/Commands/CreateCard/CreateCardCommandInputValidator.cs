@@ -9,12 +9,10 @@ namespace RDI.Application.Commands.CreateCard
         {
             RuleFor(p => p.CardNumber.ToString())
                 .NotNull()
-                .NotEmpty()
                 .Length(1, 16);
 
             RuleFor(p => p.CVV.ToString())
                 .NotNull()
-                .NotEmpty()
                 .Length(1, 5);
         }
     }

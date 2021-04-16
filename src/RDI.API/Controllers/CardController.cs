@@ -37,7 +37,7 @@ namespace RDI.API.Controllers
 
             var response = new CardResponse(commandResult.CreationDate, commandResult.Token, commandResult.CardId);
 
-            return Created("", response);
+            return Created($"/v1/cards/{response.CardId}", response);
         }
 
         [HttpPost("{cardId:guid}")]

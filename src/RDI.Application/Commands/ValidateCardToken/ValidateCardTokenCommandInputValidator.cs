@@ -15,7 +15,6 @@ namespace RDI.Application.Commands.ValidateCardToken
 
             RuleFor(p => p.CardId)
                 .NotNull()
-                .NotEmpty()
                 .Custom((cardId, context) =>
                 {
                     var exists = cardRepository
@@ -28,7 +27,6 @@ namespace RDI.Application.Commands.ValidateCardToken
 
             RuleFor(p => p.CVV.ToString())
                 .NotNull()
-                .NotEmpty()
                 .Length(1, 5);
         }
     }
